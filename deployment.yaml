@@ -18,4 +18,4 @@ spec:
         - name: k8sdemo
           image: cfaife/k8sdemo
           ports:
-            - containerPort: 8087
+            - containerPort: 8080
