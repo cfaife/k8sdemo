@@ -1,14 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8sdemo-deployment
-  labels:
-    app: k8sdemo
+  name: k8sdemo
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: k8sdemo
+  replicas: 3
   template:
     metadata:
       labels:
@@ -19,3 +17,4 @@ spec:
           image: cfaife/k8sdemo
           ports:
             - containerPort: 8080
+
