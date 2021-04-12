@@ -1,4 +1,4 @@
-#  Kubernetes Demo in local machine
+#  Kubernetes Demo with `minikube`
 
 ## Requirements
 
@@ -42,7 +42,7 @@ After the process finish, `kubectl` will be configured to use `minikube` cluster
 
 The two(2) yaml files called `deployment.yaml`  and  `service.yaml` are the `Kubernetes Resources` where put our `derised state`. And its up to the cluster to  process those manifests to our infrastructure(`workers`) in this use case we are local machine holds our infrastructure.
 
-####  Deploy the `Pod`
+###  Deploy the `Pod`
 
     kubectl create    -f  deployment.yaml 
 
@@ -50,11 +50,29 @@ The two(2) yaml files called `deployment.yaml`  and  `service.yaml` are the `Kub
 
     kubectl get pods
 
-#### Put the `Pod` to run
+#### Check the `deployment` status
 
-After the deployment creation the status of the `Pod` will be `ContainerCreating`. We need to run: 
+After the deployment creation the status of the `Pod` will be `ContainerCreating`. We also check the deployment 
+status with: 
 
     kubectl get deployments
 
-To change its status to `Running`.
+###   LoadBalancer Service 
+
+#### creating the serice
+
+    kubectl create  -f service.yaml
+
+#### Get the service 
+
+    kubectl get svc
+
+
+
+
+
+
+
+
+
 
